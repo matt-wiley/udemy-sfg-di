@@ -1,10 +1,8 @@
 package guru.springframework.udemysfgdi.controllers;
 
-import guru.springframework.udemysfgdi.services.GreetingServiceImpl;
+import guru.springframework.udemysfgdi.services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class ConstructorInjectedControllerTest {
 
@@ -14,7 +12,7 @@ class ConstructorInjectedControllerTest {
     void setUp() {
         // This is the injection
         // This is the most preferred method of injection
-        controller = new ConstructorInjectedController(new GreetingServiceImpl());
+        controller = new ConstructorInjectedController(new ConstructorGreetingService());
     }
 
     @Test

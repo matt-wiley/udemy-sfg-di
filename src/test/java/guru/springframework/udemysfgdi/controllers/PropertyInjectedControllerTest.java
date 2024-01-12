@@ -1,10 +1,8 @@
 package guru.springframework.udemysfgdi.controllers;
 
-import guru.springframework.udemysfgdi.services.GreetingServiceImpl;
+import guru.springframework.udemysfgdi.services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class PropertyInjectedControllerTest {
 
@@ -15,7 +13,7 @@ class PropertyInjectedControllerTest {
         controller = new PropertyInjectedController();
         // This is the injection
         // This is the least preferred method of injection
-        controller.greetingService = new GreetingServiceImpl();
+        controller.greetingService = new ConstructorGreetingService();
     }
 
     @Test
