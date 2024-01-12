@@ -1,6 +1,7 @@
 package guru.springframework.udemysfgdi;
 
 import guru.springframework.udemysfgdi.controllers.ConstructorInjectedController;
+import guru.springframework.udemysfgdi.controllers.MyController;
 import guru.springframework.udemysfgdi.controllers.PropertyInjectedController;
 import guru.springframework.udemysfgdi.controllers.SetterInjectedController;
 import org.springframework.boot.SpringApplication;
@@ -13,6 +14,9 @@ public class UdemySfgDiApplication {
 	public static void main(String[] args) {
 
 		ApplicationContext ctx = SpringApplication.run(UdemySfgDiApplication.class, args);
+
+		MyController myController = (MyController) ctx.getBean("myController");
+		System.out.println(myController.sayHello());
 
 		PropertyInjectedController propertyInjectedController = (PropertyInjectedController) ctx.getBean("propertyInjectedController");
 		System.out.println(propertyInjectedController.getGreeting());
