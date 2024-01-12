@@ -1,9 +1,7 @@
 package guru.springframework.udemysfgdi;
 
-import guru.springframework.udemysfgdi.controllers.ConstructorInjectedController;
-import guru.springframework.udemysfgdi.controllers.MyController;
-import guru.springframework.udemysfgdi.controllers.PropertyInjectedController;
-import guru.springframework.udemysfgdi.controllers.SetterInjectedController;
+import guru.springframework.udemysfgdi.controllers.*;
+import guru.springframework.udemysfgdi.services.I18nEnglishGreetingService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -14,6 +12,9 @@ public class UdemySfgDiApplication {
 	public static void main(String[] args) {
 
 		ApplicationContext ctx = SpringApplication.run(UdemySfgDiApplication.class, args);
+
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		System.out.println(i18nController.sayHello());
 
 		MyController myController = (MyController) ctx.getBean("myController");
 		System.out.println(myController.sayHello());
